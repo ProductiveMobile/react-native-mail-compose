@@ -109,7 +109,6 @@ public class RNMailComposeModule extends ReactContextBaseJavaModule {
                 if (attachment != null) {
                     byte[] blob = getBlob(attachment, "data");
                     String text = getString(attachment, "text");
-                    // String mimeType = getString(attachment, "mimeType");
                     String filename = getString(attachment, "filename");
                     if (filename == null) {
                         filename = UUID.randomUUID().toString();
@@ -130,7 +129,6 @@ public class RNMailComposeModule extends ReactContextBaseJavaModule {
                                     getReactApplicationContext(),
                                     getReactApplicationContext().getApplicationContext()
                                             .getPackageName() + ".provider", tempFile);
-                            intent.setDataAndType(apkURI, "image/*");
                             uris.add(apkURI);
                         } else {
                             uris.add(Uri.fromFile(tempFile));
@@ -336,4 +334,3 @@ public class RNMailComposeModule extends ReactContextBaseJavaModule {
         }
     }
 }
-
